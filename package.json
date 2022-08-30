@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
+  "bin": {
+    "hello": "./build/index.js"
+  },
   "scripts": {
-    "test": "tsnode ."
+    "test": "tsnode .",
+    "package": "pkg . --targets node14-macos-x64 --output hello"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,18 @@
   "bugs": {
     "url": "https://github.com/Mastergamer433/wireguardCli/issues"
   },
-  "homepage": "https://github.com/Mastergamer433/wireguardCli#readme"
+  "homepage": "https://github.com/Mastergamer433/wireguardCli#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "@types/yargs": "^17.0.12",
+    "pkg": "^5.8.0",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "yargs": "^17.5.1"
+  },
+  "pkg": {
+    "scripts": "build/**/*.js"
+  }
+
 }
